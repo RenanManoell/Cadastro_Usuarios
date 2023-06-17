@@ -1,0 +1,27 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<h1 style ="text-align: center;" class="container">
+Lista de usuarios cadastrados
+    <button class = "form-control-sm" ><a href="{% url 'home'%}">Voltar </a>
+    </button>
+</h1>
+<div style ="text-align:right;"class="container">
+    
+</div>
+<h1></h1>
+<div class = "container">
+    <table class="table table-borderead table-striped">
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>idade</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.id_usuario}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
